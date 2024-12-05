@@ -27,6 +27,6 @@ node {
        }
 
     stage('pull'){
-        sh 'docker run --name web -d ahmedevops/MvnDockerJenkins'
+        sh 'docker run --name web -d ahmedevops/mvn-docker-jenkins'
     }
 }
