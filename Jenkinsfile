@@ -9,7 +9,7 @@ node {
     }
 
     stage('docker image build') {
-        app = docker.build("ahmedevops/MvnDockerJenkins:${env.BUILD_ID}")
+        app = docker.build("ahmedevops/mvn-docker-jenkins:${env.BUILD_ID}")
     }
 
     stage('Test Image') {
