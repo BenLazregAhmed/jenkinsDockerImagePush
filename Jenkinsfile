@@ -15,6 +15,7 @@ node {
     stage('Test Image') {
             app.withRun('-p 8081:8081') { c ->
                 sh 'docker ps'
+                sh 'sleep 30s'
                 sh 'curl localhost:8081'
             }
         }
@@ -26,7 +27,9 @@ node {
            }
        }
 
-    stage('pull'){
-        sh 'docker run --name web -d ahmedevops/mvn-docker-jenkins'
+    stage('Deploy'){
+        sh 'docker run --name --rm web -d ahmedevops/mvn-docker-jenkins'
+        sh 'sleep 180s'
+        sh 'docker container stop web'
     }
 }
