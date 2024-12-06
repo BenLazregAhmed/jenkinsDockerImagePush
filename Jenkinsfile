@@ -28,7 +28,7 @@ node {
        }
 
     stage('Deploy'){
-        sh 'docker run --name --rm web -d ahmedevops/mvn-docker-jenkins'
+        sh 'docker run -d --rm --name web -d ahmedevops/mvn-docker-jenkins'
         sh 'sleep 180s'
         sh 'docker container stop web'
     }
