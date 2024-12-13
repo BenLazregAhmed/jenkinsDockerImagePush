@@ -30,6 +30,6 @@ node {
        }
 
     stage('Deploy to render'){
-        sh 'curl $RENDER_DEPLOY_WEBHOOK_URL'
+        sh "curl ${RENDER_DEPLOY_WEBHOOK_URL}"
     }
 }
